@@ -20,8 +20,20 @@ function Mypets(){
               myPets.setpetsKeeper(pets);
             }, [pets]);
     return(
-        <>
-
+            <>
+    <Link exact to="/allpets"><p>View all pets</p></Link>
+    <Link exact to="/"><p>Logout</p></Link>
+    <Search/>
+    <AddPet/>
+        {
+    myPets.petsList.map((pet)=>{
+        return <>
+        <PetCard pet={pet}/>
+        <Delete pet={pet}/>
+        <Edit pet={pet}/>
+        </>
+    })
+}
         </>
 )
 
