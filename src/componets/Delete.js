@@ -17,3 +17,5 @@ function Delete({pet}) {
     };
     return <button onClick={handleDelete}> Delete</button>;
   }
+
+export default Delete;  
