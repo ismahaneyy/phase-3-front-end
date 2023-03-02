@@ -2,6 +2,12 @@ import { useStore } from "zustand";
 import { petsKeeper } from "../data/PetsStore";
 import axios from "axios";
 import { useState,useEffect } from "react";
+import PetCard from "../components/Petcard";
+import Delete from "../components/Delete";
+import Edit from "../components/Edit";
+import Search from "../components/Search";
+import AddPet from "../components/AddPet";
+import { Link } from "react-router-dom";
 
 function Mypets(){
     const myPets = useStore(petsKeeper);
