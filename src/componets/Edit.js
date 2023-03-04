@@ -7,9 +7,9 @@ function Edit({ pet }) {
   const pets = useStore(petsKeeper);
   const [showForm, setShowForm] = useState(false);
   const [editPet, setEditPet] = useState({
-    name: pet.name,
-    breed: pet.breed,
-    image_url: pet.image_url,
+    name: "",
+    breed: "",
+    image_url: "",
   });
 
   const handleSubmit = (e) => {
