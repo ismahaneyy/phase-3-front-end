@@ -2,19 +2,20 @@ import { useStore } from "zustand";
 import { petsKeeper } from "../data/PetsStore";
 import axios from "axios";
 import { useState,useEffect } from "react";
-import PetCard from "../components/Petcard";
-import Delete from "../components/Delete";
-import Edit from "../components/Edit";
-import Search from "../components/Search";
-import AddPet from "../components/AddPet";
+import PetCard from "../componets/Petcard";
+import Delete from "../componets/Delete";
+import Edit from "../componets/Edit";
+import Search from "../componets/Search";
+import AddPet from "../componets/AddPets";
 import { Link } from "react-router-dom";
+import React from "react";
 
 function Mypets(){
     const myPets = useStore(petsKeeper);
     const [pets, setPets] = useState([]);
     useEffect(() => {
         //this will be the fetch to a specific users pets
-        axios.get("https://philoxenia.onrender.com/pets").then((r) => setPets(r.data));
+        axios.get("https://sinatra-react-project.onrender.com/pets").then((r) => setPets(r.data));
             }, []);
             useEffect(() => {
               myPets.setpetsKeeper(pets);

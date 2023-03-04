@@ -1,9 +1,10 @@
-import PetCard from "../components/Petcard";
+import PetCard from "../componets/Petcard";
 import { useStore } from "zustand";
 import { petsKeeper } from "../data/PetsStore";
-import Search from "../components/Search";
-import AddPet from "../components/AddPet";
+import Search from "../componets/Search";
+import AddPet from "../componets/AddPets";
 import { Link } from "react-router-dom";
+import React from "react";
 
 function AllPets(){
     const pets = useStore(petsKeeper)
