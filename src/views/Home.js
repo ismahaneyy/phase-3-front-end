@@ -1,26 +1,24 @@
 import { useState } from "react";
-import { useEffect } from "react";
-// import Register from "../componets/Register";
-// import Login from "../componets/Login";
-import { useStore } from "zustand";
-import { petsKeeper } from "../data/PetsStore";
-import axios from "axios";
-import React from "react";
-import Navbar from "./Navbar"
+import Register from "../componets/RegisterUsers";
+import Login from "../componets/LoginUser";
 
-const Home = () => {
-  
-  return(
-    <div>
-      <Navbar/>
-
-      <h1>Home Page</h1>
-      <section>
-        
-      </section>  
-      </div>
-    
-  )
+function Home() {
+  const [displayRegister,displayLogin] = useState(true)
+  const changeForm = () =>{
+    displayLogin(!displayRegister)
+  }
+if(displayRegister === true){
+  return (<>
+    <h1>Petfinder</h1>
+    <Register changeForm={changeForm}/>
+    <p onClick={changeForm}>Already registered? Go to login</p>
+    </>);
+}else{
+  return (<>
+    <h1 >Petfinder</h1>
+    <Login changeForm={changeForm}/>
+    </>);
+}
 }
 
 export default Home;
