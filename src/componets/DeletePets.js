@@ -12,7 +12,7 @@ function Delete({pet}) {
       .delete(`https://ismahan-sinatra-backend.onrender.com/pets/${pet.id}`)
       .then(() => pets.setPetsKeeper(other_pets));
   };
-  return <button onClick={handleDelete}> Delete</button>;
+  return <button onClick={handleDelete} id="delete-btn"> Delete</button>;
 }
 
 export default Delete;

@@ -27,8 +27,8 @@ function AddPet({user_id}){
         onClick={() => setdisplayForm(true)
         } >Add new pet</button>
     }else{
-        return <form onSubmit={handleSubmit} >
-        <input type="text" placeholder="name" onChange={(e) =>{
+        return <form onSubmit={handleSubmit} className="mypets">
+        <input  type="text" placeholder="name" onChange={(e) =>{
         setNewPet({...newPet, "name":e.target.value})
         }}></input>
         <input type="text" placeholder="breed" onChange={(e) =>{

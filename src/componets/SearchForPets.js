@@ -13,7 +13,7 @@ axios.post("https://ismahan-sinatra-backend.onrender.com/pets/search_all",{
 )
 } 
 return(
-<input  type="text" placeholder="Search by name or breed" onChange={handleSearch}></input>
+<input className="search" type="text" placeholder="Search by name or breed" onChange={handleSearch}></input>
 )
 }
 export default Search;

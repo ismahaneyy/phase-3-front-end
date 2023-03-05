@@ -13,13 +13,19 @@ function Register({changeForm}){
         changeForm()
     }
     return(
-        <div >
-        <form onSubmit={handleSubmit} >
-            <input type="text" placeholder="Enter username"onChange={(e) => setnewPetOwner({...newPetOwner,username:e.target.value})}></input>
-            <input type="password" placeholder="Enter password"  onChange={(e) => setnewPetOwner({...newPetOwner,password:e.target.value})}></input>
-            <button >Register</button>
+        
+        <form onSubmit={handleSubmit} className="signup">
+            <h2 className="sign">Sign Up</h2>
+            <lable htmlFor="Enter Username">
+            <input type="text" placeholder="username"onChange={(e) => setnewPetOwner({...newPetOwner,username:e.target.value})} className="username"></input>
+            </lable>
+            <lable htmlFor="password">
+            <input type="password" placeholder=" password"  onChange={(e) => setnewPetOwner({...newPetOwner,password:e.target.value})} className="password"></input>
+            </lable>
+
+            <button className="register">Register</button>
         </form>
-        </div>
+        
     )
     }
 

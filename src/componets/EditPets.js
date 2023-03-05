@@ -30,7 +30,7 @@ if(displayForm === false){
     onClick={() => setdisplayForm(true)
     }>Update pet</button>
 }else{
-    return <form onSubmit={handleSubmit}>
+    return <form onSubmit={handleSubmit} id="input">
     <input type="text" placeholder="name" onChange={(e) =>{
     setchangePet({...changePet, "name":e.target.value})
     }}></input>
