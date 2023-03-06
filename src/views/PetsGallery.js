@@ -1,14 +1,15 @@
 import PetCard from "../componets/PetsCard";
 import { useStore } from "zustand";
-import { petskeeper} from "../data/PetsKeeper";
+import { petsStore} from "../data/PetsKeeper";
 import Search from "../componets/SearchForPets";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import AddPet from "../componets/AddNewPets";
 
 function AllPets() {
-  const pets = useStore(petskeeper);
+  const pets = useStore(petsStore);
   const [myPets, setMyPets] = useState([]);
 
   useEffect(() => {
@@ -18,7 +19,7 @@ function AllPets() {
   }, []);
 
   useEffect(() => {
-    pets.setPetsKeeper(myPets);
+    pets.setPetsStore(myPets);
   }, [myPets]);
 
   return (
@@ -29,9 +30,9 @@ function AllPets() {
         <Search />
       </div>
       <div className="pets-container">
-        {pets.petsData.map((pet) => (
-          <PetCard pet={pet} key={pet.id} />
-        ))}
+      {pets.petsList.map((pet)=>{
+     return <PetCard pet={pet}/>
+       })}
       </div>
     </>
   );

@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import Home from './views/Home';
-import Mypets from './views/UsersPets';
 import AllPets from './views/PetsGallery';
 import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
+import Mypets from './views/UsersPets';
 
 
 

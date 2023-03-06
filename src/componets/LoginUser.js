@@ -3,10 +3,10 @@ import { useState } from "react";
 import {useEffect} from "react"
 import axios from "axios";
 import { useStore } from "zustand";
-import { petskeeper } from "../data/PetsKeeper";
+import {  petsStore } from "../data/PetsKeeper";
 
 function Login() {
-  const pets = useStore(petskeeper)
+  const pets = useStore(petsStore)
   const [users,setUsers] = useState([])
   console.log(users)
   useEffect(()=>{
@@ -31,7 +31,7 @@ function Login() {
     
       axios.get(`https://ismahan-sinatra-backend.onrender.com/pets/${exixting_user[0].username}`).then((r) =>{
       if(r.data.length === 0){
-        pets.setPetsKeeper([{
+        pets.setPetsStore([{
         id:null,
         name:"",
         breed:"",
@@ -40,7 +40,7 @@ function Login() {
             }]) 
             redirect("/mypets")}else{
         console.log(r.data)
-        pets.setPetsKeeper(r.data) 
+        pets.setPetsStore(r.data) 
         redirect("/mypets")} 
       }    
       )

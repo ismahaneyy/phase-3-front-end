@@ -1,14 +1,14 @@
 import { create } from "zustand";
 
 const petsData = (set) =>({
-petsData:[],
-setPetsKeeper:(pet) =>{
+petsList:[],
+setPetsStore:(pet) =>{
     set((state) =>({
-        petsData:pet
+        petsList:pet
     })) 
 }
 })
-const petskeeper = create(petsData)
+const petsStore = create(petsData)
 
-export {petskeeper};
+export {petsStore};
 

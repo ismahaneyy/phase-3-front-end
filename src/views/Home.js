@@ -22,6 +22,7 @@ if(displayRegister === true){
   return (<>
     <h1 >Petfinder</h1>
     <Login changeForm={changeForm}/>
+    <p  onClick={changeForm}  className="lUser">Go back to registration</p>
     </>);
 }
 }

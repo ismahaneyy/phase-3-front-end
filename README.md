@@ -1,6 +1,9 @@
 
 # phase-3-front-end
+- You can access the deployed site by visiting:
 
+  - https://y-3rcz42bsj-ismahaneyy.vercel.app/
+  
 ## Application Behaviour(BDD)
 This is an application that allows users to add pets and be able to see all
 the pets they have added. The user should also be able to:

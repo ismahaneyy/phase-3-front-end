@@ -1,15 +1,15 @@
 import axios from "axios";
 import { useStore } from "zustand";
-import { petskeeper } from "../data/PetsKeeper";
+import { petsStore } from "../data/PetsKeeper";
 
 function Search(){
-const pets = useStore(petskeeper)
+const pets = useStore(petsStore)
 const handleSearch = (e) => {
     console.log(e.target.value)
 axios.post("https://ismahan-sinatra-backend.onrender.com/pets/search_all",{
     query: e.target.value
 }).then( (r) =>
-    pets.setPetsKeeper(r.data)
+    pets.setPetsStore(r.data)
 )
 } 
 return(
