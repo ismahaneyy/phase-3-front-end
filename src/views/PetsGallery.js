@@ -7,28 +7,34 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 
-function AllPets(){
-    const pets = useStore(petskeeper)
-    const [myPets, setMyPets] = useState([]);
-useEffect(() => {
-//this will be the fetch to a specific users pets
-axios.get("https://ismahan-sinatra-backend.onrender.com/pets").then((r) => setMyPets(r.data));
-    }, []);
-    useEffect(() => {
-      pets.setPetsKeeper(myPets);
-    }, [myPets]); 
-    return (<>
-      
-      <div >
-      <h1 >Petfinder</h1>
-      <Link exact to="/"><p >Home</p></Link>
-       <Search/>
-       </div>
-     
-       {pets.petsData.map((pet)=>{
-     return <PetCard pet={pet}/>
-       })}
-       </>
-    )
+function AllPets() {
+  const pets = useStore(petskeeper);
+  const [myPets, setMyPets] = useState([]);
+
+  useEffect(() => {
+    // This will be the fetch to a specific user's pets
+    axios.get('https://ismahan-sinatra-backend.onrender.com/pets')
+      .then((r) => setMyPets(r.data));
+  }, []);
+
+  useEffect(() => {
+    pets.setPetsKeeper(myPets);
+  }, [myPets]);
+
+  return (
+    <>
+      <div className="header">
+        <h1 className="title">Petfinder</h1>
+        <Link exact to="/" className="link">Home</Link>
+        <Search />
+      </div>
+      <div className="pets-container">
+        {pets.petsData.map((pet) => (
+          <PetCard pet={pet} key={pet.id} />
+        ))}
+      </div>
+    </>
+  );
 }
+
 export default AllPets;
